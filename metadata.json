@@ -1,0 +1,6 @@
+{
+  "name": "קורס JavaScript אינטראקטיבי",
+  "description": "קורס JavaScript מקיף ממיקוד מאפס ל-Pro הכולל 60 שיעורים אינטראקטיביים, מצגות, הדגמות קוד חיות, מנטור פיתוח תוכנה מבוסס בינה מלאכותית, ומבחנים מבוססי קוד.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
