@@ -52,7 +52,7 @@ async function startServer() {
 
   app.post('/api/chat', async (req, res) => {
     if (!ai) {
-      return res.status(500).json({ error: "Gemini SDK is not initialized (Missing API Key)." });
+      return res.status(500).json({ error: "חסר מפתח API. אנא הגדר GEMINI_API_KEY בהגדרות." });
     }
 
     try {
@@ -69,7 +69,7 @@ async function startServer() {
       }
 
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-pro', // use pro for complex reasoning over long chat history
+        model: 'gemini-2.5-flash', // Use flash for availability and speed
         contents: formattedHistory,
         config: {
           systemInstruction: SYSTEM_PROMPT,
@@ -79,7 +79,7 @@ async function startServer() {
       res.json({ text: response.text });
     } catch (error) {
        console.error("Gemini API Error:", error);
-       res.status(500).json({ error: "Internal Server Error while connecting to AI API" });
+       res.status(500).json({ error: "שגיאה בחיבור למודל, ייתכן שיש בעיה עם ה-API Key או הגישה למודל." });
     }
   });
 
